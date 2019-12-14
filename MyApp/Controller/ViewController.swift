@@ -23,7 +23,11 @@ class ViewController: UIViewController {
         if let email = account.text, let password = password.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
               // ...
-                print("error",error)
+                if let e = error {
+                    print(e)
+                }else{
+                    self.performSegue(withIdentifier: "navToListView", sender: self)
+                }
             }
             
         }
