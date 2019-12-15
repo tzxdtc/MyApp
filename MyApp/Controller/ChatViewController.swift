@@ -17,7 +17,6 @@ class ChatViewController: UIViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = [
-        Message(sender:"tom",body:"hello")
     ]
     
     override func viewDidLoad() {
@@ -31,9 +30,10 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages(){
-        messages = []
-        
-        db.collection(K.Fstore.collectionName).getDocuments { (querySnapshot, error) in
+        db.collection(K.Fstore.collectionName)
+            .order(by: K.Fstore.dateField)
+            .addSnapshotListener { (querySnapshot, error) in
+            self.messages = []
             if let e = error {
                 print("there is an error")
             }else {
@@ -57,7 +57,8 @@ class ChatViewController: UIViewController {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email{
             db.collection(K.Fstore.collectionName).addDocument(data: [
                 K.Fstore.bodyField: messageBody,
-                K.Fstore.senderField: messageSender
+                K.Fstore.senderField: messageSender,
+                K.Fstore.dateField: Date().timeIntervalSince1970
             ]) { (Error) in
                 if let e = Error {
                     print("there is an error")
