@@ -17,13 +17,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z46-Id-DKd">
-                        <rect key="frame" x="10" y="10" width="352" height="121.5"/>
+                        <rect key="frame" x="10" y="10" width="352" height="40"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-Yc-eLx">
+                                <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0ET-TL-XZ7"/>
+                                    <constraint firstAttribute="height" constant="40" id="8f5-W2-FlJ"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJs-Ju-wGC" userLabel="Message Bubble">
-                                <rect key="frame" x="0.0" y="0.0" width="292" height="121.5"/>
+                                <rect key="frame" x="60" y="0.0" width="232" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b66-gh-QTs">
-                                        <rect key="frame" x="10" y="10" width="272" height="101.5"/>
+                                        <rect key="frame" x="10" y="10" width="212" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -31,14 +38,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="b66-gh-QTs" firstAttribute="leading" secondItem="CJs-Ju-wGC" secondAttribute="leading" constant="10" id="9Pj-iM-xS6"/>
-                                    <constraint firstAttribute="trailing" secondItem="b66-gh-QTs" secondAttribute="trailing" constant="10" id="B95-jt-h6m"/>
-                                    <constraint firstItem="b66-gh-QTs" firstAttribute="top" secondItem="CJs-Ju-wGC" secondAttribute="top" constant="10" id="BI8-nG-Hkv"/>
-                                    <constraint firstAttribute="bottom" secondItem="b66-gh-QTs" secondAttribute="bottom" constant="10" id="RVU-rS-Xlh"/>
+                                    <constraint firstItem="b66-gh-QTs" firstAttribute="top" secondItem="CJs-Ju-wGC" secondAttribute="top" constant="10" id="Fce-Yf-Roc"/>
+                                    <constraint firstAttribute="trailing" secondItem="b66-gh-QTs" secondAttribute="trailing" constant="10" id="hVy-nq-ddx"/>
+                                    <constraint firstAttribute="bottom" secondItem="b66-gh-QTs" secondAttribute="bottom" constant="10" id="jfJ-YH-yCN"/>
+                                    <constraint firstItem="b66-gh-QTs" firstAttribute="leading" secondItem="CJs-Ju-wGC" secondAttribute="leading" constant="10" id="ulr-qn-oY9"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uaM-VK-jnY">
-                                <rect key="frame" x="312" y="0.5" width="40" height="120.5"/>
+                                <rect key="frame" x="312" y="0.5" width="40" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="660-BQ-v6K"/>
                                     <constraint firstAttribute="width" constant="40" id="ZTv-k6-7hL"/>
@@ -57,13 +64,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="b66-gh-QTs" id="OVi-Bb-f40"/>
+                <outlet property="leftImageView" destination="bxE-Yc-eLx" id="mUk-VJ-px5"/>
                 <outlet property="messageBubble" destination="CJs-Ju-wGC" id="3tp-pn-aYq"/>
                 <outlet property="rightImageView" destination="uaM-VK-jnY" id="ZPE-GW-tUm"/>
             </connections>
-            <point key="canvasLocation" x="34.782608695652179" y="83.035714285714278"/>
+            <point key="canvasLocation" x="-200" y="82"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="folder.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="trash.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

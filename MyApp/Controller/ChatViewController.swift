@@ -44,7 +44,9 @@ class ChatViewController: UIViewController {
                         let newMessage = Message(sender: messageSender, body: messageBody)
                             self.messages.append(newMessage)
                             DispatchQueue.main.async {
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
                                 self.tableView.reloadData()
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -64,8 +66,10 @@ class ChatViewController: UIViewController {
                     print("there is an error")
                 }else{
                     print("succeed")
+                    DispatchQueue.main.async{
+                        self.messageTextfield.text = ""
+                    }
                 }
-                
             }
         }
     }
@@ -79,8 +83,17 @@ extension ChatViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
+        let message = messages[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
         cell.textLabel?.text = messages[indexPath.row].body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+        }else{
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+        }
         return cell
     }
 }

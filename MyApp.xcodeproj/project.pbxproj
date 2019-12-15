@@ -17,6 +17,7 @@
 		8698048623A27C8400C84FA0 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698048523A27C8400C84FA0 /* constants.swift */; };
 		8698048923A4AE7700C84FA0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698048823A4AE7700C84FA0 /* Message.swift */; };
 		8698048E23A606B500C84FA0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8698048D23A606B500C84FA0 /* IQKeyboardManagerSwift */; };
+		8698049023A668B000C84FA0 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698048F23A668B000C84FA0 /* UploadImageViewController.swift */; };
 		86F43B4E23A1150600F30FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B4D23A1150600F30FD8 /* AppDelegate.swift */; };
 		86F43B5023A1150600F30FD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B4F23A1150600F30FD8 /* SceneDelegate.swift */; };
 		86F43B5223A1150600F30FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B5123A1150600F30FD8 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		8698048323A27B7C00C84FA0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8698048523A27C8400C84FA0 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		8698048823A4AE7700C84FA0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8698048F23A668B000C84FA0 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadImageViewController.swift; path = MyApp/Controller/UploadImageViewController.swift; sourceTree = SOURCE_ROOT; };
 		86F43B4A23A1150600F30FD8 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F43B4D23A1150600F30FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F43B4F23A1150600F30FD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		8698048A23A4AEAD00C84FA0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8698048F23A668B000C84FA0 /* UploadImageViewController.swift */,
 				8698048323A27B7C00C84FA0 /* ChatViewController.swift */,
 				8698047D23A13B4F00C84FA0 /* LoginViewController.swift */,
 				86F43B5123A1150600F30FD8 /* ViewController.swift */,
@@ -467,6 +470,7 @@
 				86F43B5223A1150600F30FD8 /* ViewController.swift in Sources */,
 				8698048623A27C8400C84FA0 /* constants.swift in Sources */,
 				86F43B4E23A1150600F30FD8 /* AppDelegate.swift in Sources */,
+				8698049023A668B000C84FA0 /* UploadImageViewController.swift in Sources */,
 				8698048923A4AE7700C84FA0 /* Message.swift in Sources */,
 				8698048423A27B7C00C84FA0 /* ChatViewController.swift in Sources */,
 				86F43B5023A1150600F30FD8 /* SceneDelegate.swift in Sources */,
