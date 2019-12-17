@@ -9,15 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="236" id="KGk-i7-Jjw" customClass="MessageCell" customModule="MyApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="372" height="236"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="MessageCell" customModule="MyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="372" height="236"/>
+                <rect key="frame" x="0.0" y="0.0" width="736" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z46-Id-DKd">
-                        <rect key="frame" x="10" y="10" width="352" height="40"/>
+                        <rect key="frame" x="10" y="10" width="716" height="40"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-Yc-eLx">
                                 <rect key="frame" x="0.0" y="0.5" width="40" height="39"/>
@@ -27,10 +27,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJs-Ju-wGC" userLabel="Message Bubble">
-                                <rect key="frame" x="60" y="0.0" width="232" height="40"/>
+                                <rect key="frame" x="60" y="0.0" width="596" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b66-gh-QTs">
-                                        <rect key="frame" x="10" y="10" width="212" height="20"/>
+                                        <rect key="frame" x="10" y="10" width="576" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,14 +38,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="b66-gh-QTs" firstAttribute="top" secondItem="CJs-Ju-wGC" secondAttribute="top" constant="10" id="Fce-Yf-Roc"/>
-                                    <constraint firstAttribute="trailing" secondItem="b66-gh-QTs" secondAttribute="trailing" constant="10" id="hVy-nq-ddx"/>
-                                    <constraint firstAttribute="bottom" secondItem="b66-gh-QTs" secondAttribute="bottom" constant="10" id="jfJ-YH-yCN"/>
-                                    <constraint firstItem="b66-gh-QTs" firstAttribute="leading" secondItem="CJs-Ju-wGC" secondAttribute="leading" constant="10" id="ulr-qn-oY9"/>
+                                    <constraint firstItem="b66-gh-QTs" firstAttribute="top" secondItem="CJs-Ju-wGC" secondAttribute="top" constant="10" id="D90-l4-LG0"/>
+                                    <constraint firstItem="b66-gh-QTs" firstAttribute="leading" secondItem="CJs-Ju-wGC" secondAttribute="leading" constant="10" id="Nwc-MA-4Iy"/>
+                                    <constraint firstAttribute="trailing" secondItem="b66-gh-QTs" secondAttribute="trailing" constant="10" id="oiT-PB-NMU"/>
+                                    <constraint firstAttribute="bottom" secondItem="b66-gh-QTs" secondAttribute="bottom" constant="10" id="sb4-lS-Kzw"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uaM-VK-jnY">
-                                <rect key="frame" x="312" y="0.5" width="40" height="39"/>
+                                <rect key="frame" x="676" y="0.5" width="40" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="660-BQ-v6K"/>
                                     <constraint firstAttribute="width" constant="40" id="ZTv-k6-7hL"/>
@@ -68,7 +68,7 @@
                 <outlet property="messageBubble" destination="CJs-Ju-wGC" id="3tp-pn-aYq"/>
                 <outlet property="rightImageView" destination="uaM-VK-jnY" id="ZPE-GW-tUm"/>
             </connections>
-            <point key="canvasLocation" x="-200" y="82"/>
+            <point key="canvasLocation" x="44.927536231884062" y="-49.21875"/>
         </tableViewCell>
     </objects>
     <resources>

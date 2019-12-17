@@ -9,8 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import BSImagePicker
+import Photos
 
 class UploadImageViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+    var SelectedAssets = [PHAsset]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,31 +23,53 @@ class UploadImageViewController: UIViewController,UINavigationControllerDelegate
     }
     
     @IBAction func selectImage(_ sender: Any) {
-        pickImageFromLibrary()
+        let vc = BSImagePickerViewController()
+        self.bs_presentImagePickerController(vc, animated: true,
+                                             select: {(asset: PHAsset)  -> Void in
+                                                
+                                             },
+                                             deselect: {(asset: PHAsset)  -> Void in
+                                                                                     
+                                             },
+                                             cancel: {(assets: [PHAsset])  -> Void in
+                                                                                     
+                                             },
+                                             finish: {(assets: [PHAsset])  -> Void in
+                                                for i in 0..<assets.count
+                                                {
+                                                    self.SelectedAssets.append(assets[i])
+                                                
+                                                }
+                                                self.convertAssetToImages()
+                                                                                     
+                                             },
+                                             completion: nil)
     }
     
-    func pickImageFromLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
-            let controller = UIImagePickerController()
-            controller.delegate = self
-            controller.sourceType = UIImagePickerController.SourceType.photoLibrary
-
-            present(controller, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func convertAssetToImages() -> Void {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://valued-visitor-244309.appspot.com")
-
-        if let data = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage).pngData() {
-            let reference = storageRef.child("image/1.jpg")
-            reference.putData(data, metadata: nil, completion: { metaData, error in
-                print(metaData)
-                print(error)
-            })
-            dismiss(animated: true, completion: nil)
+        if SelectedAssets.count != 0 {
+            for i in 0..<SelectedAssets.count{
+                let manager = PHImageManager.default()
+                let option = PHImageRequestOptions()
+                var thumbnail = UIImage()
+                option.isSynchronous = true
+                
+                manager.requestImage(for: SelectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: option) { (result, info) in
+                    thumbnail = result!
+                }
+                
+                let data = thumbnail.jpegData(compressionQuality: 0.7)
+                if let newImage = UIImage(data: data!)?.pngData(){
+                    let reference = storageRef.child("image/\(i+1).jpg")
+                    reference.putData(newImage, metadata: nil) { (metaData, error) in
+                        print("metaData",metaData)
+                        print("error",error)
+                    }
+                }
+ 
+            }
         }
     }
-    
 }

@@ -11,6 +11,7 @@ target 'MyApp' do
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod "BSImagePicker", "~> 2.8"
 
   target 'MyAppTests' do
     inherit! :search_paths
