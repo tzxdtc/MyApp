@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ImageCell: UITableViewCell {
 
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var slideShow: ImageSlideshow!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

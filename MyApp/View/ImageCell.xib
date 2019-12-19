@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="598" height="516"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-Zo-fOD">
-                        <rect key="frame" x="0.0" y="11" width="598" height="405"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-Zo-fOD" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                        <rect key="frame" x="0.0" y="0.0" width="598" height="426"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-qx-SNK">
@@ -48,18 +48,18 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0mV-qx-SNK" firstAttribute="top" secondItem="uUR-Zo-fOD" secondAttribute="bottom" constant="30" id="16y-pK-26s"/>
                     <constraint firstAttribute="trailing" secondItem="0mV-qx-SNK" secondAttribute="trailing" id="OP1-HQ-h60"/>
-                    <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-20" id="RPW-Ka-GYc"/>
                     <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T8v-jD-Ujg"/>
                     <constraint firstAttribute="bottom" secondItem="0mV-qx-SNK" secondAttribute="bottom" constant="30" id="U9R-RH-Ode"/>
-                    <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="uUR-Zo-fOD" secondAttribute="leading" id="ZSA-gh-z0p"/>
-                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fou-a4-4J5"/>
-                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gJb-eu-JRS"/>
+                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iLw-DV-bGp"/>
+                    <constraint firstAttribute="trailing" secondItem="uUR-Zo-fOD" secondAttribute="trailing" id="j8Y-o6-6gj"/>
+                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="m5J-UX-Zdl"/>
+                    <constraint firstItem="0mV-qx-SNK" firstAttribute="top" secondItem="uUR-Zo-fOD" secondAttribute="bottom" constant="20" id="vYZ-la-zhF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="slideShow" destination="uUR-Zo-fOD" id="ufJ-sF-px5"/>
                 <outlet property="textView" destination="kum-6Z-vsO" id="cbf-If-w2n"/>
             </connections>
             <point key="canvasLocation" x="68.115942028985515" y="162.72321428571428"/>
