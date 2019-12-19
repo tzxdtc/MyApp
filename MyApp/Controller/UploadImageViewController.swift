@@ -11,15 +11,31 @@ import Firebase
 import FirebaseStorage
 import BSImagePicker
 import Photos
+import ImageSlideshow
 
-class UploadImageViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class UploadImageViewController:UIViewController{
+    
+    
+    @IBOutlet weak var slideshow: ImageSlideshow!
     var SelectedAssets = [PHAsset]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard let image1 = UIImage(named: "1") else { return }
+        guard let image2 = UIImage(named: "americaVisa") else { return }
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UploadImageViewController.didTap))
+        slideshow.addGestureRecognizer(gestureRecognizer)
+        slideshow.setImageInputs([
+            ImageSource(image: image1),
+            ImageSource(image: image2)
+        ])
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func didTap() {
+      slideshow.presentFullScreenController(from: self)
     }
     
     @IBAction func selectImage(_ sender: Any) {
