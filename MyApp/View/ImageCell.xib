@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCellIdentifier" rowHeight="516" id="KGk-i7-Jjw" customClass="ImageCell" customModule="MyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="598" height="516"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="598" height="516"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-Zo-fOD">
+                        <rect key="frame" x="0.0" y="11" width="598" height="405"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-qx-SNK">
+                        <rect key="frame" x="0.0" y="446" width="598" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ufW-So-mHn">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5St-wh-J7k"/>
+                                    <constraint firstAttribute="height" constant="40" id="Xli-4J-IOF"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kum-6Z-vsO">
+                                <rect key="frame" x="40" y="0.0" width="558" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ufW-So-mHn" firstAttribute="top" secondItem="0mV-qx-SNK" secondAttribute="top" id="15W-c0-Z0n"/>
+                            <constraint firstItem="kum-6Z-vsO" firstAttribute="leading" secondItem="ufW-So-mHn" secondAttribute="trailing" id="9Sx-76-dR4"/>
+                            <constraint firstItem="ufW-So-mHn" firstAttribute="leading" secondItem="0mV-qx-SNK" secondAttribute="leading" id="ncp-wm-ZyZ"/>
+                            <constraint firstAttribute="bottom" secondItem="ufW-So-mHn" secondAttribute="bottom" id="xuv-dw-t6X"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0mV-qx-SNK" firstAttribute="top" secondItem="uUR-Zo-fOD" secondAttribute="bottom" constant="30" id="16y-pK-26s"/>
+                    <constraint firstAttribute="trailing" secondItem="0mV-qx-SNK" secondAttribute="trailing" id="OP1-HQ-h60"/>
+                    <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-20" id="RPW-Ka-GYc"/>
+                    <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T8v-jD-Ujg"/>
+                    <constraint firstAttribute="bottom" secondItem="0mV-qx-SNK" secondAttribute="bottom" constant="30" id="U9R-RH-Ode"/>
+                    <constraint firstItem="0mV-qx-SNK" firstAttribute="leading" secondItem="uUR-Zo-fOD" secondAttribute="leading" id="ZSA-gh-z0p"/>
+                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fou-a4-4J5"/>
+                    <constraint firstItem="uUR-Zo-fOD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gJb-eu-JRS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="textView" destination="kum-6Z-vsO" id="cbf-If-w2n"/>
+            </connections>
+            <point key="canvasLocation" x="68.115942028985515" y="162.72321428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

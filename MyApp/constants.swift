@@ -11,6 +11,8 @@ import Foundation
 struct K {
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "MessageCell"
+    static let imageCellIdentifier = "imageCellIdentifier"
+    static let imageCellName = "ImageCell"
     
     struct BrandColors {
         static let purple = "BrandPurple"
