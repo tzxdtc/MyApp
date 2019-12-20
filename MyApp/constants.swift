@@ -13,6 +13,8 @@ struct K {
     static let cellNibName = "MessageCell"
     static let imageCellIdentifier = "imageCellIdentifier"
     static let imageCellName = "ImageCell"
+    static let friendsCellIdentifier = "friendsCellIdentifier"
+    static let friendsCellName = "FriendsCell"
     
     struct BrandColors {
         static let purple = "BrandPurple"
@@ -23,6 +25,7 @@ struct K {
     
     struct Fstore {
         static let collectionName = "messages"
+        static let channelName = "channel"
         static let senderField = "sender"
         static let bodyField = "body"
         static let dateField = "date"

@@ -21,6 +21,10 @@
 		8698049223AB16E300C84FA0 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698049123AB16E300C84FA0 /* ImageListViewController.swift */; };
 		8698049523AB174200C84FA0 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698049323AB174200C84FA0 /* ImageCell.swift */; };
 		8698049623AB174200C84FA0 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8698049423AB174200C84FA0 /* ImageCell.xib */; };
+		8698049923AB83C700C84FA0 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698049723AB83C700C84FA0 /* FriendsCell.swift */; };
+		8698049A23AB83C700C84FA0 /* FriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8698049823AB83C700C84FA0 /* FriendsCell.xib */; };
+		8698049C23AB858A00C84FA0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698049B23AB858A00C84FA0 /* FriendsListViewController.swift */; };
+		8698049E23AC773100C84FA0 /* channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698049D23AC773100C84FA0 /* channel.swift */; };
 		86F43B4E23A1150600F30FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B4D23A1150600F30FD8 /* AppDelegate.swift */; };
 		86F43B5023A1150600F30FD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B4F23A1150600F30FD8 /* SceneDelegate.swift */; };
 		86F43B5223A1150600F30FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43B5123A1150600F30FD8 /* ViewController.swift */; };
@@ -66,6 +70,10 @@
 		8698049123AB16E300C84FA0 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		8698049323AB174200C84FA0 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		8698049423AB174200C84FA0 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		8698049723AB83C700C84FA0 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
+		8698049823AB83C700C84FA0 /* FriendsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCell.xib; sourceTree = "<group>"; };
+		8698049B23AB858A00C84FA0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		8698049D23AC773100C84FA0 /* channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = channel.swift; sourceTree = "<group>"; };
 		86F43B4A23A1150600F30FD8 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F43B4D23A1150600F30FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F43B4F23A1150600F30FD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				8698048823A4AE7700C84FA0 /* Message.swift */,
+				8698049D23AC773100C84FA0 /* channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +163,7 @@
 				8698047D23A13B4F00C84FA0 /* LoginViewController.swift */,
 				86F43B5123A1150600F30FD8 /* ViewController.swift */,
 				8698049123AB16E300C84FA0 /* ImageListViewController.swift */,
+				8698049B23AB858A00C84FA0 /* FriendsListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 				8698048023A278F300C84FA0 /* MessageCell.xib */,
 				8698049323AB174200C84FA0 /* ImageCell.swift */,
 				8698049423AB174200C84FA0 /* ImageCell.xib */,
+				8698049723AB83C700C84FA0 /* FriendsCell.swift */,
+				8698049823AB83C700C84FA0 /* FriendsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8698048223A278F300C84FA0 /* MessageCell.xib in Resources */,
+				8698049A23AB83C700C84FA0 /* FriendsCell.xib in Resources */,
 				86F43B5A23A1150700F30FD8 /* LaunchScreen.storyboard in Resources */,
 				862D5A9523A1156300B2E8B3 /* GoogleService-Info.plist in Resources */,
 				8698049623AB174200C84FA0 /* ImageCell.xib in Resources */,
@@ -476,12 +489,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8698049223AB16E300C84FA0 /* ImageListViewController.swift in Sources */,
+				8698049E23AC773100C84FA0 /* channel.swift in Sources */,
 				8698047E23A13B4F00C84FA0 /* LoginViewController.swift in Sources */,
 				8698049523AB174200C84FA0 /* ImageCell.swift in Sources */,
 				8698048123A278F300C84FA0 /* MessageCell.swift in Sources */,
 				86F43B5223A1150600F30FD8 /* ViewController.swift in Sources */,
 				8698048623A27C8400C84FA0 /* constants.swift in Sources */,
 				86F43B4E23A1150600F30FD8 /* AppDelegate.swift in Sources */,
+				8698049C23AB858A00C84FA0 /* FriendsListViewController.swift in Sources */,
+				8698049923AB83C700C84FA0 /* FriendsCell.swift in Sources */,
 				8698049023A668B000C84FA0 /* UploadImageViewController.swift in Sources */,
 				8698048923A4AE7700C84FA0 /* Message.swift in Sources */,
 				8698048423A27B7C00C84FA0 /* ChatViewController.swift in Sources */,

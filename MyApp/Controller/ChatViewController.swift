@@ -16,8 +16,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-    ]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class ChatViewController: UIViewController {
             .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
             if let e = error {
-                print("there is an error")
+                print(e)
             }else {
                 if let snapshotDocument = querySnapshot?.documents {
                     for doc in snapshotDocument{
@@ -63,9 +62,8 @@ class ChatViewController: UIViewController {
                 K.Fstore.dateField: Date().timeIntervalSince1970
             ]) { (Error) in
                 if let e = Error {
-                    print("there is an error")
+                    print(e)
                 }else{
-                    print("succeed")
                     DispatchQueue.main.async{
                         self.messageTextfield.text = ""
                     }
@@ -78,6 +76,7 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("message",messages.count)
         return messages.count
     }
     
