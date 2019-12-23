@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kwE-4B-Tsn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j84-Lo-m0Z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -54,7 +54,7 @@
         <!--Chat View Controller-->
         <scene sceneID="7bi-tg-hag">
             <objects>
-                <viewController id="XHd-nV-Klo" customClass="ChatViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XHd-nV-Klo" customClass="ChatViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bhB-TJ-n67">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Upload Image View Controller-->
         <scene sceneID="HuV-df-Llo">
             <objects>
-                <viewController id="Bei-J4-jxB" customClass="UploadImageViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hello" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bei-J4-jxB" customClass="UploadImageViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGV-sy-TpM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,12 +200,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVb-bF-aXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3464" y="899"/>
+            <point key="canvasLocation" x="4373.913043478261" y="898.66071428571422"/>
         </scene>
         <!--Friends List View Controller-->
         <scene sceneID="5Vp-ZI-6KO">
             <objects>
-                <viewController id="kwE-4B-Tsn" customClass="FriendsListViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatView" id="kwE-4B-Tsn" customClass="FriendsListViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UhD-Eb-gyK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,13 +219,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Pk5-Z4-gaF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ETz-Pl-u7p"/>
                     <connections>
                         <outlet property="tableview" destination="iFh-pZ-BvV" id="rbM-A0-sj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Y-YE-Rd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2067" y="899"/>
+            <point key="canvasLocation" x="2976.811594202899" y="898.66071428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3eW-r0-7AO">
@@ -244,6 +245,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYE-NP-x4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-409" y="71"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uKa-bz-VwO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j84-Lo-m0Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lit-s6-omk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kwE-4B-Tsn" kind="relationship" relationship="rootViewController" id="jK9-tP-CPl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzg-IU-arg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2066.666666666667" y="898.66071428571422"/>
         </scene>
     </scenes>
 </document>

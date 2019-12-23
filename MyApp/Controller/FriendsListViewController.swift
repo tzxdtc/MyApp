@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class FriendsListViewController: UIViewController {
+class FriendsListViewController: UIViewController,UITableViewDelegate {
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -26,6 +26,7 @@ class FriendsListViewController: UIViewController {
         loadchannels()
         tableview.dataSource = self
         tableview.register(UINib(nibName: K.friendsCellName, bundle: nil), forCellReuseIdentifier: K.friendsCellIdentifier)
+        tableview.delegate = self
     }
     
     func loadchannels(){
@@ -39,14 +40,15 @@ class FriendsListViewController: UIViewController {
                     for doc in snapshotDocument{
                         let data = doc.data()
                         if let user1 = data["user1"] as? String,
-                            let user2 = data["user1"] as? String,
-                        let lastMessage = data["lastMessage"] as? String{
+                        let user2 = data["user1"] as? String,
+                        let lastMessage = data["lastMessage"] as? String,
+                        let channelId = doc.documentID as? String{
                             if self.currentUserUid == user1{
     
-                                let channel = Channel(user: user2, lastMessage: lastMessage)
+                                let channel = Channel(user: user2, lastMessage: lastMessage, channelID: channelId)
                                 self.channels.append(channel)
                             }else if self.currentUserUid == user2{
-                                let channel = Channel(user: user1, lastMessage: lastMessage)
+                                let channel = Channel(user: user1, lastMessage: lastMessage, channelID: channelId)
                                 self.channels.append(channel)
                             }
                             DispatchQueue.main.async {
@@ -58,26 +60,30 @@ class FriendsListViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension FriendsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("chan000",channels.count)
         return channels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.friendsCellIdentifier, for: indexPath) as! FriendsCell
-        print("channels",channels)
         let channel = channels[indexPath.row]
         
         cell.userName.text = channel.user
         cell.textContent.text = channel.lastMessage
-        tableView.rowHeight = 100
+        tableView.rowHeight = 60
         return cell
-        
-            }
+        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = channels[indexPath.row]
+        let chatViewController = self.storyboard!.instantiateViewController(withIdentifier: K.ControllerIdentifier.chatViewIdentifier) as! ChatViewController
+        chatViewController.channerId = channel.channelID
+        print(channel.channelID)
+        self.navigationController!.pushViewController(chatViewController, animated: true)
+    }
     
     
 }

@@ -30,4 +30,8 @@ struct K {
         static let bodyField = "body"
         static let dateField = "date"
     }
+    
+    struct ControllerIdentifier {
+        static let chatViewIdentifier = "chatViewController"
+    }
 }

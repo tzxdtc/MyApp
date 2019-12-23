@@ -17,6 +17,7 @@ class ChatViewController: UIViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = []
+    var channerId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,8 @@ class ChatViewController: UIViewController {
     }
     
     func loadMessages(){
-        db.collection(K.Fstore.collectionName)
-            .order(by: K.Fstore.dateField)
+        db.collection("channel/\(channerId ?? "")/thread")
+            .order(by: K.Fstore.dateField, descending: true)
             .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
             if let e = error {
@@ -56,7 +57,7 @@ class ChatViewController: UIViewController {
     
     @IBAction func sendPressed(_ sender: Any) {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email{
-            db.collection(K.Fstore.collectionName).addDocument(data: [
+            db.collection("channel/\(channerId ?? "")/thread").addDocument(data: [
                 K.Fstore.bodyField: messageBody,
                 K.Fstore.senderField: messageSender,
                 K.Fstore.dateField: Date().timeIntervalSince1970
@@ -89,7 +90,6 @@ extension ChatViewController: UITableViewDataSource {
         if message.sender == Auth.auth().currentUser?.email {
             cell.leftImageView.isHidden = true
             cell.rightImageView.isHidden = false
-            cell.messageBubble.backgroundColor = UIColor.green
         }else{
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true

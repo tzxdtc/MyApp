@@ -11,4 +11,5 @@ import Foundation
 struct Channel {
     let user: String
     let lastMessage: String
+    let channelID: String
 }
