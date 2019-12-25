@@ -18,6 +18,7 @@ class FriendsListViewController: UIViewController,UITableViewDelegate {
     let db = Firestore.firestore()
     let currentUserUid = Auth.auth().currentUser?.uid
     
+    
     var channels: [Channel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class FriendsListViewController: UIViewController,UITableViewDelegate {
                     for doc in snapshotDocument{
                         let data = doc.data()
                         if let user1 = data["user1"] as? String,
-                        let user2 = data["user1"] as? String,
+                        let user2 = data["user2"] as? String,
                         let lastMessage = data["lastMessage"] as? String,
                         let channelId = doc.documentID as? String{
                             if self.currentUserUid == user1{
@@ -64,6 +65,7 @@ class FriendsListViewController: UIViewController,UITableViewDelegate {
 
 extension FriendsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(channels.count)
         return channels.count
     }
     

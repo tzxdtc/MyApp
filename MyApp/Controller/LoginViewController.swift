@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
                 if let e = error {
                     print("error",e)
                 }else{
-                    print("hello world")
-                    self!.performSegue(withIdentifier: "moveToListView", sender: self)
+                    let imageListController = self?.storyboard!.instantiateViewController(identifier: "imageViewList") as! ImageListViewController
+                        self?.navigationController?.pushViewController(imageListController, animated: true)
                 }
 //              guard let strongSelf = self else { return }
               // ...

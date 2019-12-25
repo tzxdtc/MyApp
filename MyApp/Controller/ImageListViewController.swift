@@ -20,8 +20,15 @@ class ImageListViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func pressPlus(_ sender: Any) {
+        let uploadImageController = self.storyboard!.instantiateViewController(identifier: "upLoadImageView") as! UploadImageViewController
+             self.navigationController?.pushViewController(uploadImageController, animated: true)
+    }
+    
 
 }
+
 
 extension ImageListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

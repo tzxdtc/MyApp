@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseFirestore
 import BSImagePicker
 import Photos
 import ImageSlideshow
@@ -18,6 +19,7 @@ class UploadImageViewController:UIViewController{
     
     @IBOutlet weak var slideshow: ImageSlideshow!
     var SelectedAssets = [PHAsset]()
+    let db = Firestore.firestore()
     
     
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class UploadImageViewController:UIViewController{
             ImageSource(image: image1),
             ImageSource(image: image2)
         ])
+        print(Auth.auth().currentUser?.displayName)
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +43,7 @@ class UploadImageViewController:UIViewController{
     
     @IBAction func selectImage(_ sender: Any) {
         let vc = BSImagePickerViewController()
+        SelectedAssets = []
         self.bs_presentImagePickerController(vc, animated: true,
                                              select: {(asset: PHAsset)  -> Void in
                                                 
@@ -65,6 +69,8 @@ class UploadImageViewController:UIViewController{
     func convertAssetToImages() -> Void {
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://valued-visitor-244309.appspot.com")
+//        Auth.auth().currentUser?.displayName
+        db.collection("")
         if SelectedAssets.count != 0 {
             for i in 0..<SelectedAssets.count{
                 let manager = PHImageManager.default()

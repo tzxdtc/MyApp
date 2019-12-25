@@ -31,7 +31,7 @@ class ChatViewController: UIViewController {
     
     func loadMessages(){
         db.collection("channel/\(channerId ?? "")/thread")
-            .order(by: K.Fstore.dateField, descending: true)
+            .order(by: K.Fstore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
             self.messages = []
             if let e = error {
